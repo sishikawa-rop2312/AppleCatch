@@ -877,6 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1819373667}
   pointText: {fileID: 1131397857}
+  generator: {fileID: 967867063}
 --- !u!4 &1833089258
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,6 +1015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appleSE: {fileID: 8300000, guid: 1643a80dbc02bd342aafe323909c638c, type: 3}
   bombSE: {fileID: 8300000, guid: 5618903578472434a90e6d6ade6b8ef4, type: 3}
+  director: {fileID: 1833089257}
 --- !u!65 &2053605779
 BoxCollider:
   m_ObjectHideFlags: 0

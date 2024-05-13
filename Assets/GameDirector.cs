@@ -9,7 +9,7 @@ public class GameDirector : MonoBehaviour
     public TextMeshProUGUI pointText;
     float time = 30.0f;
     int point = 0;
-    GameObject generator;
+    public ItemGenerator generator;
 
     public void GetApple()
     {
@@ -22,34 +22,35 @@ public class GameDirector : MonoBehaviour
 
     void Start()
     {
-        this.generator = GameObject.Find("ItemGenerator");
+        // this.generator = GameObject.Find("ItemGenerator");
     }
 
     void Update()
     {
+        this.time -= Time.deltaTime;
+
         if (this.time < 0)
         {
             this.time = 0;
-            this.generator.GetComponent<ItemGenerator>().SetParameter(10000.0f, 0, 0);
+            this.generator.SetParameter(10000.0f, 0, 0);
         }
-        else if (0 <= this.time && this.time < 5)
+        else if (0 <= this.time && this.time < 4)
         {
-            this.generator.GetComponent<ItemGenerator>().SetParameter(0.7f, -0.04f, 3);
+            this.generator.SetParameter(0.3f, -0.06f, 0);
         }
-        else if (5 <= this.time && this.time < 10)
+        else if (4 <= this.time && this.time < 12)
         {
-            this.generator.GetComponent<ItemGenerator>().SetParameter(0.4f, -0.06f, 6);
+            this.generator.SetParameter(0.5f, -0.05f, 6);
         }
-        else if (10 <= this.time && this.time < 20)
+        else if (12 <= this.time && this.time < 23)
         {
-            this.generator.GetComponent<ItemGenerator>().SetParameter(0.7f, -0.04f, 4);
+            this.generator.SetParameter(0.8f, -0.04f, 4);
         }
-        else if (20 <= this.time && this.time < 30)
+        else if (23 <= this.time && this.time < 30)
         {
-            this.generator.GetComponent<ItemGenerator>().SetParameter(1.0f, -0.03f, 2);
+            this.generator.SetParameter(1.0f, -0.03f, 2);
         }
 
-        this.time -= Time.deltaTime;
         this.timerText.text = this.time.ToString("F1");
         this.pointText.text = this.point.ToString() + " point";
     }

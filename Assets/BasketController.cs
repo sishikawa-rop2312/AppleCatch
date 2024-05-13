@@ -7,13 +7,12 @@ public class BasketController : MonoBehaviour
     public AudioClip appleSE;
     public AudioClip bombSE;
     AudioSource aud;
-    GameObject director;
+    public GameDirector director;
 
     void Start()
     {
         Application.targetFrameRate = 60;
         this.aud = GetComponent<AudioSource>();
-        this.director = GameObject.Find("GameDirector");
     }
 
     void OnTriggerEnter(Collider other)
